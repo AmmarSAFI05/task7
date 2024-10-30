@@ -10,10 +10,10 @@ class SocialAppButton extends StatefulWidget {
   final double? height;
   final Widget? child;
   final Color? textColor;
-  Color backgroundColor;
+  final Color backgroundColor;
   final BorderRadius? borderRadius;
 
-  SocialAppButton({
+  const SocialAppButton({
     super.key,
     required this.text,
     required this.onPressed,

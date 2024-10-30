@@ -1,4 +1,1 @@
-
-class ConstData {
-
-}
+class ConstData {}

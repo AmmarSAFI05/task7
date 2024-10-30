@@ -6,7 +6,8 @@ import '../core/constant/app_sizes.dart';
 
 class SocialAppCircleAvatar extends StatelessWidget {
   final String imageUrl;
-  const SocialAppCircleAvatar({super.key, required this.imageUrl});
+  final bool? online;
+  const SocialAppCircleAvatar({super.key, required this.imageUrl, this.online=true});
 
   @override
   Widget build(BuildContext context) {
@@ -14,12 +15,12 @@ class SocialAppCircleAvatar extends StatelessWidget {
       maxRadius: 25,
       backgroundImage: AssetImage(imageUrl),
       backgroundColor: AppColors.orangeColor,
-      child: Align(
+      child: online==true?Align(
           alignment: const Alignment(1, 1),
           child: Image.asset(
             AppImages.greenDot,
             width: AppSize.iconSm(),
-          )),
+          )):null
     );
   }
 }

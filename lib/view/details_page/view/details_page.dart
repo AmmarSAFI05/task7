@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/constant/app_sizes.dart';
 
 class DetailsPage extends StatefulWidget {
   const DetailsPage({super.key});
@@ -13,7 +12,7 @@ class _DetailsPageState extends State<DetailsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       // Code the DETAILS PAGE page here.
     );
   }

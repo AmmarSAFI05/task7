@@ -12,7 +12,9 @@ class SocialAppTextFormField extends StatefulWidget {
   final TextInputType? keyboardType;
   final bool? isPassword;
   final Icon? suffixIcon;
-  const SocialAppTextFormField(
+  final Color? textColor;
+  final Color? backgroundColor;
+   const SocialAppTextFormField(
       {super.key,
         required this.controller,
         this.hintText,
@@ -21,7 +23,7 @@ class SocialAppTextFormField extends StatefulWidget {
         this.hasIcon = false,
         this.suffixIcon,
         this.isPassword,
-        this.keyboardType});
+        this.keyboardType, this.textColor, this.backgroundColor});
 
   @override
   SocialAppTextFormFieldState createState() => SocialAppTextFormFieldState();
@@ -39,16 +41,16 @@ class SocialAppTextFormFieldState extends State<SocialAppTextFormField> {
       decoration: InputDecoration(
         contentPadding:
         EdgeInsets.symmetric(vertical: AppSize.screenHeight * 0.0175, horizontal: AppSize.screenWidth*0.05),
-        fillColor: AppColors.fieldColor,
+        fillColor: widget.backgroundColor??AppColors.fieldColor,
         filled: true,
         enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(AppSize.borderRadiusSm()*0.75),
             borderSide:
-            BorderSide(width: 1, color: Colors.transparent)),
+            const BorderSide(width: 1, color: Colors.transparent)),
         focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(AppSize.borderRadiusSm()*0.75),
             borderSide:
-            BorderSide(width: 1, color: Colors.transparent)),
+            const BorderSide(width: 1, color: Colors.transparent)),
         hintText: widget.hintText,
         hintStyle: TextStyle(
             height: 2, color: AppColors.greyColor, fontSize: AppSize.fontSizeSm()),
@@ -70,19 +72,19 @@ class SocialAppTextFormFieldState extends State<SocialAppTextFormField> {
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(AppSize.borderRadiusSm()*0.75),
             borderSide:
-            BorderSide(width: 1, color: Colors.transparent)),
+            const BorderSide(width: 1, color: Colors.transparent)),
         errorBorder: OutlineInputBorder(
-          borderSide: BorderSide(width: 1, color: Colors.transparent),
+          borderSide: const BorderSide(width: 1, color: Colors.transparent),
           borderRadius: BorderRadius.circular(AppSize.borderRadiusSm()*0.75),
         ),
         errorStyle: const TextStyle(color: Colors.red),
         focusedErrorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(AppSize.borderRadiusLg()*0.75),
             borderSide:
-            BorderSide(width: 1, color: Colors.transparent)),
+            const BorderSide(width: 1, color: Colors.transparent)),
       ),
       style: TextStyle(
-          color: AppColors.blueColor,
+          color: widget.textColor??AppColors.blueColor,
           height: 2,
           fontSize: AppSize.fontSizeSm() * 1.125),
       cursorErrorColor: Colors.black,
