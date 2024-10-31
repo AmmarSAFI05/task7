@@ -79,9 +79,9 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
               child: Container(
                 width: AppSize.md(),
                 height: AppSize.md(),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     shape: BoxShape.circle, color: AppColors.orangeColor),
-                child: Center(
+                child: const Center(
                   child: Text(
                     "2",
                     style: TextStyle(color: Colors.white),

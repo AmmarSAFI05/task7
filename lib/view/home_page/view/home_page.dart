@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:task7_demo/core/text_styles.dart';
 
 import '../../../core/constant/app_colors.dart';
-import '../../../core/constant/app_fonts.dart';
 import '../../../core/constant/app_images.dart';
 import '../../../core/constant/app_sizes.dart';
 import '../../../core/constant/app_text.dart';
@@ -222,11 +221,9 @@ class _HomePageState extends State<HomePage> {
                     child: Row(
                       children: List.generate(
                         socialAppCards.length,
-                        (index) => Container(
-                          child: Padding(
-                            padding: EdgeInsets.only(right: AppSize.sm()),
-                            child: socialAppCards[index],
-                          ),
+                        (index) => Padding(
+                          padding: EdgeInsets.only(right: AppSize.sm()),
+                          child: socialAppCards[index],
                         ),
                       ),
                     ),

@@ -4,16 +4,16 @@ import 'constant/app_fonts.dart';
 import 'constant/app_sizes.dart';
 
 class AppTextStyles {
-  static TextStyle greyText = TextStyle(color: AppColors.greyColor);
+  static TextStyle greyText = const TextStyle(color: AppColors.greyColor);
   static TextStyle homePageUser = TextStyle(
     fontWeight: AppFontWeight.xbold,
     fontSize: AppSize.fontSizeSm() * 1.1,
   );
-  static TextStyle pointsNumber = TextStyle(
+  static TextStyle pointsNumber = const TextStyle(
     color: AppColors.greenColor,
     fontWeight: AppFontWeight.bold,
   );
-  static TextStyle points = TextStyle(
+  static TextStyle points = const TextStyle(
     color: AppColors.greenColor,
     fontWeight: AppFontWeight.normal,
   );

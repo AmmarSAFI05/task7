@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:task7_demo/view/bottom_nav_bar_page/view/bottom_nav_bar_page.dart';
-import 'package:task7_demo/view/on_boarding_page/view/on_boarding_page.dart';
 import 'core/constant/app_sizes.dart';
 
 void main() {

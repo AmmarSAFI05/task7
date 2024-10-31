@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task7_demo/core/constant/app_images.dart';
 import 'package:task7_demo/core/text_styles.dart';
-import 'package:task7_demo/widgets/social_app_circle_avatar.dart';
 import 'package:task7_demo/widgets/social_app_text_form_field.dart';
 import 'package:task7_demo/widgets/soical_app_button.dart';
 
@@ -24,14 +23,14 @@ class _AccountPageState extends State<AccountPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Container(
+        child: SizedBox(
           width: AppSize.screenWidth * 0.9,
           child: Column(
             children: [
               SizedBox(
                 height: AppSize.xl() * 2,
               ),
-              CircleAvatar(
+              const CircleAvatar(
                 maxRadius: 50,
                 backgroundImage: AssetImage(AppImages.profile7),
                 backgroundColor: AppColors.orangeColor,
