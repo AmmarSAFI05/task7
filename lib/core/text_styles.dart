@@ -20,4 +20,27 @@ class AppTextStyles {
       fontWeight: AppFontWeight.med,
       color: AppColors.bgColor);
 
+  //Nour Schedule Page
+  static TextStyle SchedulePageStyle = TextStyle(
+      color: AppColors.black,
+      fontSize: AppSize.fontSizeSm() * 1.1,
+      fontFamily: 'Poppins',
+      fontWeight: AppFontWeight.xbold,
+      height: 0.5
+  );
+
+  static TextStyle SchedulePageTitleStyle = TextStyle(
+    color: AppColors.lightGreyColor,
+    fontSize: AppSize.fontSizeSm() * 1.5,
+    fontFamily: 'Poppins',
+    fontWeight: AppFontWeight.bold,
+  );
+
+  static TextStyle ScheduleButtonStyle = TextStyle(
+    color: AppColors.bgColor,
+    fontSize: AppSize.fontSizeSm() * 1.1,
+    fontFamily: 'Poppins',
+    fontWeight: AppFontWeight.normal,
+  );
+
 }
