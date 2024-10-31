@@ -38,6 +38,7 @@ class _HomePageState extends State<HomePage> {
     List<String> categories = ["All", "UI/UX", "Illustration", "3D Animation"];
 
     return Scaffold(
+      //test
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
