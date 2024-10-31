@@ -16,6 +16,7 @@ static const notification = "assets/images/icons/notification.png";
 static const profileDisabled = "assets/images/icons/profile_disabled.png";
 static const search = "assets/images/icons/search.png";
 static const greenDot = "assets/images/icons/green_dot.png";
+static const orangeDot = "assets/images/icons/orange_dot.png";
 
 
 // App Photos

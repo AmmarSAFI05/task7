@@ -20,4 +20,23 @@ class AppTextStyles {
       fontWeight: AppFontWeight.med,
       color: AppColors.bgColor);
 
+  static TextStyle MyMessageTitle = TextStyle(
+      fontSize: AppSize.fontSizeSm() * 1.25,
+      fontWeight: AppFontWeight.bold,
+      color: AppColors.black);
+
+  static TextStyle NewMessage = TextStyle(
+      fontSize: AppSize.fontSizeSm()  ,
+      fontWeight: AppFontWeight.normal,
+      color: AppColors.greyColor);
+
+  static TextStyle MessageTime = TextStyle(
+      fontSize: AppSize.fontSizeSm()  ,
+      fontWeight: AppFontWeight.normal,
+      color: AppColors.lighterGreyColor);
+
+  static TextStyle numberUnreadMessage = TextStyle(
+      fontSize: AppSize.fontSizeSm()  ,
+      fontWeight: AppFontWeight.med,
+      color: AppColors.bgColor);
 }
