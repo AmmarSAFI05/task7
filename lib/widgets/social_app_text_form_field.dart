@@ -14,6 +14,9 @@ class SocialAppTextFormField extends StatefulWidget {
   final Icon? suffixIcon;
   final Color? textColor;
   final Color? backgroundColor;
+  //Nour
+  final Color? hintTextColor;
+
    const SocialAppTextFormField(
       {super.key,
         required this.controller,
@@ -23,7 +26,10 @@ class SocialAppTextFormField extends StatefulWidget {
         this.hasIcon = false,
         this.suffixIcon,
         this.isPassword,
-        this.keyboardType, this.textColor, this.backgroundColor});
+        this.keyboardType,
+        this.textColor,
+        this.backgroundColor,
+        this.hintTextColor,});
 
   @override
   SocialAppTextFormFieldState createState() => SocialAppTextFormFieldState();
@@ -53,7 +59,9 @@ class SocialAppTextFormFieldState extends State<SocialAppTextFormField> {
             const BorderSide(width: 1, color: Colors.transparent)),
         hintText: widget.hintText,
         hintStyle: TextStyle(
-            height: 2, color: AppColors.greyColor, fontSize: AppSize.fontSizeSm()),
+            height: 2,
+            color: widget.hintTextColor ?? AppColors.greyColor,
+            fontSize: AppSize.fontSizeSm()),
         suffixIcon: widget.isPassword == true
             ? IconButton(
             onPressed: () {
