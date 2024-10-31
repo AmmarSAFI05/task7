@@ -2,7 +2,7 @@ class AppImages{
   // App Icons
 static const budget = "assets/images/icons/budget.png";
 static const calender = "assets/images/icons/calender.png";
-static const exploreDisabled = "assets/images/icons/explore.png";
+static const explore = "assets/images/icons/explore.png";
 static const facebook = "assets/images/icons/facebook.png";
 static const focalIcon = "assets/images/icons/focal_icon.png";
 static const google = "assets/images/icons/google.png";
@@ -39,7 +39,5 @@ static const  profilePic2 = "assets/images/profile_pictures/profile_picture_home
 static const  profilePic3 = "assets/images/profile_pictures/profile_picture_home_screen3.png";
 static const  profilePic4 = "assets/images/profile_pictures/profile_picture_home_screen4.png";
 static const  containerProfilePic = "assets/images/profile_pictures/container_profile_picture.png";
-
-
 
 }

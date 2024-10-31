@@ -16,7 +16,7 @@ class AppText {
 
   //Details Page Texts
   static String detailsAppBar = "Detail course";
-  static String detailsTitle = "Step design sprint for beginner";
+  static String detailsTitle = "Step design sprint for\nbeginner";
   static String detailsFeatures3 = "Free";
   static String detailsFeatures1 = "6 lessons";
   static String detailsFeatures2 = "Design";
