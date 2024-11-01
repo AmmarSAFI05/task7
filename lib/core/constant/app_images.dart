@@ -17,7 +17,7 @@ class AppImages {
   static const search = "assets/images/icons/search.png";
   static const greenDot = "assets/images/icons/green_dot.png";
   static const arrowBack =
-      "assets/images/icons/CTA Small_Icon.png"; // added by judy
+      "assets/images/icons/arrowback.png"; // added by judy
 
 // App Photos
   static const communityText = "assets/images/photos/community.png";
@@ -27,8 +27,7 @@ class AppImages {
   static const focalXText = "assets/images/photos/focalX.png";
   static const courseOne =
       "assets/images/photos/Courseone.png"; // added by judy
-  static const courseTwo =
-      "assets/images/photos/Coursetwo.png"; // added by judy
+  static get courseTwo => "assets/images/photos/Coursetwo.png"; // added by judy
 // App Profile Pictures in messaging page
   static const profile1 = "assets/images/profile_pictures/profile_pic1.png";
   static const profile2 = "assets/images/profile_pictures/profile_pic2.png";

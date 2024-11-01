@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:task7_demo/core/constant/app_colors.dart';
-import 'package:task7_demo/core/constant/app_fonts.dart';
+
 import 'package:task7_demo/core/constant/app_images.dart';
 import 'package:task7_demo/core/constant/app_sizes.dart';
 import 'package:task7_demo/core/constant/app_text.dart';
+import 'package:task7_demo/core/text_styles.dart';
 import 'package:task7_demo/view/schedule_page/view/schedule_page.dart';
+import 'package:task7_demo/widgets/social_app_tags.dart';
 
 import '../../../widgets/soical_app_button.dart';
 
 
-//made by judy
+
 class DetailsPage extends StatefulWidget {
   const DetailsPage({super.key});
 
@@ -20,7 +22,6 @@ class DetailsPage extends StatefulWidget {
 class _DetailsPageState extends State<DetailsPage> {
   @override
   Widget build(BuildContext context) {
-    // Initialize AppSize
     AppSize.init(context);
 
     return Scaffold(
@@ -29,7 +30,7 @@ class _DetailsPageState extends State<DetailsPage> {
         backgroundColor: AppColors.bgColor,
         elevation: 0,
         leading: Padding(
-          padding: const EdgeInsets.only(top: 15, left: 10),
+          padding: EdgeInsets.only(top: AppSize.sm(), left: AppSize.xsm()),
           child: Image.asset(
             AppImages.arrowBack,
             width: AppSize.iconMd(),
@@ -37,22 +38,17 @@ class _DetailsPageState extends State<DetailsPage> {
           ),
         ),
         title: Padding(
-          padding: const EdgeInsets.only(top: 15, right: 35),
+          padding: EdgeInsets.only(top: AppSize.sm(), right: AppSize.md()),
           child: Center(
             child: Text(
-              'Detail course',
-              style: TextStyle(
-                fontFamily: 'Poppins-Medium',
-                fontSize: AppSize.fontSizeMd(),
-                fontWeight: AppFontWeight.bold,
-                color: AppColors.black,
-              ),
+              AppText.detailsAppBar,
+              style: AppTextStyles.detailsAppBar,
             ),
           ),
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(top: 15, right: 10),
+            padding: EdgeInsets.only(top: AppSize.sm(), right: AppSize.xsm()),
             child: Stack(
               children: [
                 Image.asset(
@@ -61,16 +57,18 @@ class _DetailsPageState extends State<DetailsPage> {
                   height: AppSize.iconMd(),
                 ),
                 Positioned(
-                    top: 5,
-                    right: 0,
-                    child: Container(
-                      width: 8,
-                      height: 8,
-                      decoration: BoxDecoration(
-                          border: Border.all(color: AppColors.bgColor),
-                          shape: BoxShape.circle,
-                          color: AppColors.orangeColor),
-                    ))
+                  top: AppSize.md() * 0.09,
+                  right: AppSize.sm() * 0,
+                  child: Container(
+                    width: AppSize.md() * 0.5,
+                    height: AppSize.md() * 0.5,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: AppColors.bgColor),
+                      shape: BoxShape.circle,
+                      color: AppColors.orangeColor,
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
@@ -82,28 +80,21 @@ class _DetailsPageState extends State<DetailsPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Course Image with Play Button Overlay
               Padding(
-                padding: const EdgeInsets.only(top: 15),
+                padding: EdgeInsets.only(top: AppSize.md()),
                 child: Container(
                   width: double.infinity,
-                  height: AppSize.screenHeight * 0.25,
+                  height: AppSize.screenHeight * 0.28,
                   decoration: BoxDecoration(
-                      boxShadow: const [
-                        BoxShadow(
-                          blurRadius: 12.63,
-                          offset: Offset(0, 4.51),
-                          spreadRadius: 0.25,
-                          color: AppColors.black,
-                        )
-                      ],
-                      borderRadius:
-                          BorderRadius.circular(AppSize.borderRadiusLg() * 0.9),
-                      image: const DecorationImage(
-                          fit: BoxFit.fitWidth,
-                          image: AssetImage(
-                            AppImages.videoBox,
-                          ))),
+                    borderRadius:
+                        BorderRadius.circular(AppSize.borderRadiusLg() * 0.9),
+                    image: const DecorationImage(
+                      fit: BoxFit.fitWidth,
+                      image: AssetImage(
+                        AppImages.videoBox,
+                      ),
+                    ),
+                  ),
                   child: Center(
                     child: Icon(
                       Icons.play_circle_fill,
@@ -114,44 +105,41 @@ class _DetailsPageState extends State<DetailsPage> {
                 ),
               ),
               SizedBox(height: AppSize.md()),
-
-              // Course Title
               Text(
                 AppText.detailsTitle,
-                style: TextStyle(
-                  fontSize: AppSize.fontSizeXlg(),
-                  fontWeight: AppFontWeight.bold,
-                  color: AppColors.black,
-                ),
+                style: AppTextStyles.detailsTitle,
               ),
               SizedBox(height: AppSize.sm()),
-
-              // Tags Row
               Row(
                 children: [
-                  _buildTag('6 lessons', AppColors.bgColor, AppColors.bluelight,
-                      BorderRadius.circular(AppSize.borderRadiusSm() * 0.5)),
+                  SocialAppTags(
+                      text: AppText.detailsFeatures1,
+                      color: AppColors.bgColor,
+                      colortwo: AppColors.bluelight,
+                      borderRadius: BorderRadius.circular(
+                          AppSize.borderRadiusSm() * 0.5)),
                   SizedBox(width: AppSize.sm()),
-                  _buildTag('Design', AppColors.bgColor, AppColors.blueColor,
-                      BorderRadius.circular(AppSize.borderRadiusSm() * 0.5)),
+                  SocialAppTags(
+                      text: AppText.detailsFeatures2,
+                      color: AppColors.bgColor,
+                      colortwo: AppColors.blueColor,
+                      borderRadius: BorderRadius.circular(
+                          AppSize.borderRadiusSm() * 0.5)),
                   SizedBox(width: AppSize.sm()),
-                  _buildTag('Free', AppColors.bgColor, AppColors.purpleColor,
-                      BorderRadius.circular(AppSize.borderRadiusSm() * 0.5)),
+                  SocialAppTags(
+                      text: AppText.detailsFeatures3,
+                      color: AppColors.bgColor,
+                      colortwo: AppColors.purpleColor,
+                      borderRadius: BorderRadius.circular(
+                          AppSize.borderRadiusSm() * 0.5)),
                 ],
               ),
               SizedBox(height: AppSize.xsm()),
-
-              // Course Description
               Text(
                 AppText.detailsSubTitle,
-                style: TextStyle(
-                    fontSize: AppSize.fontSizeSm(),
-                    color: AppColors.lightGreyColor,
-                    fontWeight: AppFontWeight.normal),
+                style: AppTextStyles.detailsSubTitle,
               ),
               SizedBox(height: AppSize.spaceBtwSections()),
-
-              // Instructor Profile Section
               Row(
                 children: [
                   Stack(
@@ -163,12 +151,13 @@ class _DetailsPageState extends State<DetailsPage> {
                         ),
                       ),
                       Positioned(
-                          bottom: -5,
-                          right: 0,
-                          child: Image.asset(
-                            AppImages.greenDot,
-                            width: AppSize.iconSm(),
-                          ))
+                        bottom: AppSize.sm() * 0.032,
+                        right: AppSize.sm() * 0,
+                        child: Image.asset(
+                          AppImages.greenDot,
+                          width: AppSize.iconSm(),
+                        ),
+                      ),
                     ],
                   ),
                   SizedBox(width: AppSize.sm()),
@@ -177,23 +166,15 @@ class _DetailsPageState extends State<DetailsPage> {
                     children: [
                       Text(
                         AppText.detailsUsername,
-                        style: TextStyle(
-                          fontSize: AppSize.fontSizeMd(),
-                          fontWeight: AppFontWeight.bold,
-                          color: AppColors.black,
-                        ),
+                        style: AppTextStyles.detailsUsername,
                       ),
                       Text(
                         AppText.detailsSubUsername,
-                        style: TextStyle(
-                          fontWeight: AppFontWeight.med,
-                          fontSize: AppSize.fontSizeSm(),
-                          color: AppColors.lightGreyColor,
-                        ),
+                        style: AppTextStyles.detailsSubUsername,
                       ),
                     ],
                   ),
-                  const Spacer(flex: 1),
+                  const Spacer(),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
@@ -206,152 +187,97 @@ class _DetailsPageState extends State<DetailsPage> {
                           ),
                           SizedBox(width: AppSize.xsm()),
                           Text(
-                            '5h 21m',
-                            style: TextStyle(
-                              fontSize: AppSize.fontSizeSm(),
-                              color: AppColors.greyColor,
-                            ),
+                            AppText.hour,
+                            style: AppTextStyles.hour,
                           ),
                         ],
                       ),
-                      // Free e-book tag under the time
                       Padding(
-                        padding: const EdgeInsets.only(top: 5),
-                        child: _buildTag(
-                            'Free e-book',
-                            AppColors.bgColor,
-                            AppColors.yellowColor,
-                            BorderRadius.circular(
-                                AppSize.borderRadiusMd() * 0.7)),
+                        padding: EdgeInsets.only(top: AppSize.xsm()),
+                        child: SocialAppTags(
+                          text: AppText.freeEBook,
+                          color: AppColors.bgColor,
+                          colortwo: AppColors.yellowColor,
+                          borderRadius: BorderRadius.circular(
+                              AppSize.borderRadiusMd() * 5),
+                        ),
                       ),
                     ],
                   ),
                 ],
               ),
+              SizedBox(height: AppSize.lg()),
               SizedBox(
-                width: AppSize.xsm(),
+                height: AppSize.sm() * 2,
               ),
-              // Action Row with Button
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Container(
-                    width: 78,
-                    height: 12.69,
-                    decoration:
-                        BoxDecoration(borderRadius: BorderRadius.circular(18)),
-                    child: InkWell(
-                      onTap: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 5, right: 5),
-                        child: Center(
-                          child: Text(
-                            'Free e-book',
-                            style: TextStyle(
-                              fontWeight: AppFontWeight.med,
-                              fontFamily: 'Poppins-Medium',
-                              color: AppColors.bgColor,
-                              fontSize: AppSize.fontSizeSm(),
+              Padding(
+                padding: EdgeInsets.only(top: AppSize.xsm() * 0.08),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(top: AppSize.xsm() * 0.03),
+                      child: Container(
+                        width: double.infinity,
+                        height: AppSize.screenHeight * 0.1,
+                        decoration: BoxDecoration(
+                          borderRadius:
+                              BorderRadius.circular(AppSize.borderRadiusSm()),
+                          image:  DecorationImage(
+                            fit: BoxFit.fitWidth,
+                            image: AssetImage(
+                             AppImages.courseTwo,
                             ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 15),
-                // ignore: avoid_unnecessary_containers
-                child: Container(
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 10),
-                        child: Container(
-                          width: double.infinity,
-                          height: AppSize.screenHeight * 0.1,
-                          decoration: BoxDecoration(
+                    SizedBox(
+                      height: AppSize.sm() * 0.01,
+                    ),
+                    Stack(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(
+                              top: AppSize.md() * 0.9,
+                              bottom: AppSize.sm() * 0.02),
+                          child: Container(
+                            width: double.infinity,
+                            height: AppSize.screenHeight * 0.06,
+                            decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(
                                   AppSize.borderRadiusSm()),
                               image: const DecorationImage(
-                                  fit: BoxFit.fitWidth,
-                                  image: AssetImage(
-                                    AppImages.courseTwo,
-                                  ))),
-                        ),
-                      ),
-
-                      // Follow Class container
-
-                      Stack(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(top: 15),
-                            child: Container(
-                              width: double.infinity,
-                              height: AppSize.screenHeight * 0.059,
-                              // Adjust height as needed
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(
-                                    AppSize.borderRadiusSm()),
-                                image: const DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage(AppImages.courseOne),
-                                ),
+                                fit: BoxFit.cover,
+                                image: AssetImage(AppImages.courseOne),
                               ),
                             ),
                           ),
-                          SizedBox(
-                            height: AppSize.sm() * 0.3,
+                        ),
+                        SizedBox(
+                          height: AppSize.md() * 0.02,
+                        ),
+                        Positioned(
+                          top: AppSize.sm() * 0.05,
+                          bottom: AppSize.sm() * 1.8,
+                          child: SocialAppButton(
+                            text: AppText.detailsButton,
+                            textColor: AppColors.bgColor,
+                            onPressed: () {
+                              showModalBottomSheet(
+                                isScrollControlled: true,
+                                context: context,
+                                builder: (context) => const SchedulePage(),
+                              );
+                            },
                           ),
-                          Positioned(
-                            top: 0,
-                            bottom: 12,
-                            child: SocialAppButton(
-                              text: AppText.detailsButton,
-                              textColor: AppColors.bgColor,
-                              onPressed: () {
-                                showModalBottomSheet(
-                                  isScrollControlled: true,
-                                  context: context,
-                                  builder: (context) => const SchedulePage(),
-                                );
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
-              )
+              ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-
-  // Tag widget for displaying tags like "6 lessons", "Design", "Free", etc.
-  Widget _buildTag(
-      String text, Color color, Color colortwo, BorderRadius borderRadius) {
-    return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: AppSize.sm(),
-        vertical: AppSize.xsm() * 0.3,
-      ),
-      decoration: BoxDecoration(
-        color: colortwo,
-        borderRadius: BorderRadius.circular(AppSize.borderRadiusSm() * 0.5),
-      ),
-      child: Text(
-        text,
-        style: TextStyle(
-          color: color,
-          fontFamily: 'Poppins-Regular',
-          fontSize: AppSize.fontSizeSm(),
-          fontWeight: AppFontWeight.bold,
         ),
       ),
     );
