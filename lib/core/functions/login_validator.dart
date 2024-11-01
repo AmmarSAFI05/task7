@@ -14,7 +14,7 @@ class LoginValidator{
     return null;
   }
 //Nour
-  static String? validatePhonenum (String? value) {
+  static String? validatePhoneNum (String? value) {
   if (value == null || value.isEmpty) {
   return 'Please enter your mobile number';
   }
