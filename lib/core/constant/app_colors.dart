@@ -12,5 +12,7 @@ class AppColors {
   static const Color blueColor = Color(0xff0082CD);
   static const Color purpleColor = Color(0xff8D5EF2);
   static const Color yellowColor = Color(0xffFCCC75);
-  static const Color greenDot= Color(0xff4ED442);
+  static const Color greenDot = Color(0xff4ED442);
+  static const Color bluelight = Color(0xff4DC9D1); //added by judy
+  static const Color redshadow = Color(0xffEC5F5F); //added by judy
 }
