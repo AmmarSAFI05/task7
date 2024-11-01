@@ -39,13 +39,13 @@ class AppTextStyles {
       color: AppColors.black);
 
 
-  static TextStyle dont_have_account= TextStyle(
+  static TextStyle dontHavaAcount= TextStyle(
       fontSize: AppSize.fontSizeSm(),
       fontWeight: AppFontWeight.normal,
       color: AppColors.lightGreyColor
   );
 
-  static TextStyle sign_up= TextStyle(
+  static TextStyle signUp= TextStyle(
       fontSize: AppSize.fontSizeSm(),
       fontWeight: AppFontWeight.normal,
       color: AppColors.blueColor);

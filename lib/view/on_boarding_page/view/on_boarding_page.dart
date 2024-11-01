@@ -41,8 +41,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   }
 
   Future<void> _navigateBasedOnLoginStatus() async {
-    final email = await _constData.ReadSecureData("email");
-    final password = await _constData.ReadSecureData("password");
+    final email = await _constData.readSecureData("email");
+    final password = await _constData.readSecureData("password");
 
     final isLoggedIn = email != null &&
         email.isNotEmpty &&
@@ -50,6 +50,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         password.isNotEmpty;
 
     Navigator.pushReplacement(
+      // ignore: use_build_context_synchronously
       context,
       MaterialPageRoute(
         builder: (context) => isLoggedIn ? const HomePage() :const SignInPage(),

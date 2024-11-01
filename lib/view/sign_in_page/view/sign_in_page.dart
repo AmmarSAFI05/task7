@@ -75,11 +75,12 @@ class _SignInPageState extends State<SignInPage> {
                       onPressed: () async {
                         if (formKey.currentState!.validate()) {
                           // Write email and password to secure storage
-                          await appConst.WriteSecureData(
+                          await appConst.writeSecureData(
                               "email", emailController.text);
-                          await appConst.WriteSecureData(
+                          await appConst.writeSecureData(
                               "password", passwordController.text);
                           // Navigate to HomePage and replace SignInPage
+                          // ignore: use_build_context_synchronously
                           Navigator.of(context).pushReplacement(
                             MaterialPageRoute(builder: (context) =>const  HomePage()),
                           );
@@ -169,7 +170,7 @@ class _SignInPageState extends State<SignInPage> {
                       children: [
                         Text(
                           AppText.notRegistered,
-                          style: AppTextStyles.dont_have_account,
+                          style: AppTextStyles.dontHavaAcount,
                         ),
                         InkWell(
                           onTap: () {
@@ -180,7 +181,7 @@ class _SignInPageState extends State<SignInPage> {
                           },
                           child: Text(
                             AppText.signUp,
-                            style: AppTextStyles.sign_up,
+                            style: AppTextStyles.signUp,
                           ),
                         ),
                       ],

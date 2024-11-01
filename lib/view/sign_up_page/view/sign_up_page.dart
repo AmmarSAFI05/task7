@@ -87,14 +87,15 @@ class _SignUpPageState extends State<SignUpPage> {
                       onPressed: () async {
                         if (formState.currentState!.validate()) {
                           // Write email and password to secure storage
-                          await appConst.WriteSecureData(
+                          await appConst.writeSecureData(
                               "email", emailController.text);
-                          await appConst.WriteSecureData(
+                          await appConst.writeSecureData(
                               "password", passwordController.text);
 
                           // Navigate to HomePage and replace SignInPage
+                          // ignore: use_build_context_synchronously
                           Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (context) => const HomePage()),
+                            MaterialPageRoute(builder: (context) => const HomePage()),
                           );
                         }
                       },
@@ -105,7 +106,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                     Row(
                       children :  [
-                   const     Expanded(
+                        const     Expanded(
                             child: Divider(
                                 color: AppColors.greyColor, thickness: 2)),
                         Padding(
@@ -116,7 +117,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                   color: AppColors.greyColor,
                                   fontSize: AppSize.fontSizeMd())),
                         ),
-                     const   Expanded(
+                        const   Expanded(
                             child: Divider(
                                 color: AppColors.greyColor, thickness: 2)),
                       ],
@@ -150,10 +151,10 @@ class _SignUpPageState extends State<SignUpPage> {
                     ////////////////////////////////
                     SocialAppButton(
                       backgroundColor: AppColors.fieldColor,
-                    
+
                       // onPressed: () {},
                       text: '', onPressed: () {},
-                        child: Row(
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Image.asset(
@@ -210,7 +211,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           children: [
                             Text(
                               AppText.registered,
-                              style: AppTextStyles.dont_have_account,
+                              style: AppTextStyles.dontHavaAcount,
                             ),
                             InkWell(
                               onTap: () {
@@ -219,7 +220,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               },
                               child: Text(
                                 AppText.signIn,
-                                style: AppTextStyles.sign_up,
+                                style: AppTextStyles.signUp,
                               ),
                             ),
                           ],
