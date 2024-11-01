@@ -68,7 +68,7 @@ class SocialAppMessageCard extends StatelessWidget {
                       SizedBox(width: AppSize.xsm() * 0.25),
                       Icon(Icons.arrow_back_ios_new,
                           size: AppSize.md(),
-                          color: AppColors.lighterGreyColor),
+                          color: AppColors.lighterGreyColor2),
                     ],
                   ),
                 ],

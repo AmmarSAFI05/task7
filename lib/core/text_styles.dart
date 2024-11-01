@@ -25,6 +25,11 @@ class AppTextStyles {
       fontWeight: AppFontWeight.bold,
       color: AppColors.black);
 
+  static TextStyle subMessageTitle = TextStyle(
+      fontSize: AppSize.fontSizeSm()  ,
+      fontWeight: AppFontWeight.normal,
+      color: AppColors.lighterGreyColor2);
+
   static TextStyle newMessage = TextStyle(
       fontSize: AppSize.fontSizeSm()  ,
       fontWeight: AppFontWeight.normal,
@@ -33,7 +38,7 @@ class AppTextStyles {
   static TextStyle messageTime = TextStyle(
       fontSize: AppSize.fontSizeSm()  ,
       fontWeight: AppFontWeight.normal,
-      color: AppColors.lighterGreyColor);
+      color: AppColors.lighterGreyColor2);
 
   static TextStyle numberUnreadMessage = TextStyle(
       fontSize: AppSize.fontSizeSm()  ,

@@ -33,7 +33,7 @@ class SocialAppMessageHeader extends StatelessWidget {
                   const SizedBox(),
                   Text(
                     AppText.newMessages,
-                    style: AppTextStyles.newMessage,
+                    style: AppTextStyles.subMessageTitle,
                   ),
                 ],
               ),

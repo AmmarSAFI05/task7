@@ -103,7 +103,7 @@ class _MessagePageState extends State<MessagePage> {
                         ),
                         if (index != messages.length - 1)
                           Divider(
-                            color: AppColors.lighterGreyColor,
+                            color: AppColors.lighterGreyColor2,
                             thickness: 1,
                             indent: AppSize.xxl() * 1.50,
                             height: AppSize.xsm() * 1.80,

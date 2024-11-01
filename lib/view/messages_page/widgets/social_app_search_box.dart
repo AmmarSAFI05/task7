@@ -39,7 +39,7 @@ class SocialAppSearchBoxState extends State<SocialAppSearchBox> {
         hintText: widget.hintText,
         hintStyle: TextStyle(
             height: 2,
-            color: AppColors.lighterGreyColor,
+            color: AppColors.lighterGreyColor2,
             fontSize: AppSize.fontSizeSm() * 1.25),
         suffixIcon: Container(
           width: AppSize.xxl() * 1.25,
@@ -71,7 +71,7 @@ class SocialAppSearchBoxState extends State<SocialAppSearchBox> {
             borderSide: const BorderSide(width: 1, color: Colors.transparent)),
       ),
       style: TextStyle(
-          color: AppColors.blueColor,
+          color: AppColors.greyColor,
           height: 2,
           fontSize: AppSize.fontSizeSm() * 1.125),
       cursorErrorColor: Colors.black,
