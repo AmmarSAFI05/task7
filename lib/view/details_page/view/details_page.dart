@@ -10,8 +10,6 @@ import 'package:task7_demo/widgets/social_app_tags.dart';
 
 import '../../../widgets/soical_app_button.dart';
 
-
-
 class DetailsPage extends StatefulWidget {
   const DetailsPage({super.key});
 
@@ -93,13 +91,6 @@ class _DetailsPageState extends State<DetailsPage> {
                       image: AssetImage(
                         AppImages.videoBox,
                       ),
-                    ),
-                  ),
-                  child: Center(
-                    child: Icon(
-                      Icons.play_circle_fill,
-                      color: Colors.white,
-                      size: AppSize.screenWidth * 0.16,
                     ),
                   ),
                 ),
@@ -199,7 +190,7 @@ class _DetailsPageState extends State<DetailsPage> {
                           color: AppColors.bgColor,
                           colortwo: AppColors.yellowColor,
                           borderRadius: BorderRadius.circular(
-                              AppSize.borderRadiusMd() * 5),
+                              AppSize.borderRadiusSm() * 0.5),
                         ),
                       ),
                     ],
@@ -222,10 +213,10 @@ class _DetailsPageState extends State<DetailsPage> {
                         decoration: BoxDecoration(
                           borderRadius:
                               BorderRadius.circular(AppSize.borderRadiusSm()),
-                          image:  DecorationImage(
+                          image: DecorationImage(
                             fit: BoxFit.fitWidth,
                             image: AssetImage(
-                             AppImages.courseTwo,
+                              AppImages.courseTwo,
                             ),
                           ),
                         ),
