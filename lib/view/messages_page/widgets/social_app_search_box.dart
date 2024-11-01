@@ -1,57 +1,7 @@
-// import 'package:flutter/cupertino.dart';
-// import 'package:task7/core/constant/app_colors.dart';
-// import 'package:task7/core/constant/app_images.dart';
-// import 'package:task7/core/constant/app_sizes.dart';
-// import 'package:task7/core/constant/app_text.dart';
-// import 'package:task7/core/text_styles.dart';
-//
-// class SocialAppSearchBox extends StatelessWidget {
-//   const SocialAppSearchBox({super.key});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       height: 50,
-//       width:double.infinity ,
-//       padding: EdgeInsets.all(10.0),
-//       decoration: BoxDecoration(
-//         color: AppColors.fieldColor,
-//         borderRadius: BorderRadius.circular(AppSize.borderRadiusSm()),
-//       ),
-//       child: Row(
-//         children: [
-//           // SizedBox(width: 10,),
-//           Text(
-//            "Search here",
-//           ),
-//           Align(
-//             alignment: Alignment.centerRight,
-//             child: Container(
-//               width: 30,
-//               height: 30,
-//               alignment: Alignment.center,
-//               decoration: BoxDecoration(
-//                 color: AppColors.orangeColor,
-//                 // borderRadius: AppSize.borderRadiusSm(),
-//
-//               ),
-//               child: Image(
-//                 image: AssetImage("assets/images/icons/search.png"),
-//                 width:30,
-//               ),
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
-
 import 'package:flutter/material.dart';
-
-import '../core/constant/app_colors.dart';
-import '../core/constant/app_images.dart';
-import '../core/constant/app_sizes.dart';
+import '../../../core/constant/app_colors.dart';
+import '../../../core/constant/app_images.dart';
+import '../../../core/constant/app_sizes.dart';
 
 class SocialAppSearchBox extends StatefulWidget {
   final TextEditingController controller;
@@ -81,11 +31,11 @@ class SocialAppSearchBoxState extends State<SocialAppSearchBox> {
         enabledBorder: OutlineInputBorder(
             borderRadius:
                 BorderRadius.circular(AppSize.borderRadiusSm() * 0.75),
-            borderSide: BorderSide(width: 1, color: Colors.transparent)),
+            borderSide: const BorderSide(width: 1, color: Colors.transparent)),
         focusedBorder: OutlineInputBorder(
             borderRadius:
                 BorderRadius.circular(AppSize.borderRadiusSm() * 0.75),
-            borderSide: BorderSide(width: 1, color: Colors.transparent)),
+            borderSide: const BorderSide(width: 1, color: Colors.transparent)),
         hintText: widget.hintText,
         hintStyle: TextStyle(
             height: 2,
@@ -95,7 +45,7 @@ class SocialAppSearchBoxState extends State<SocialAppSearchBox> {
           width: AppSize.xxl() * 1.25,
           height: AppSize.xxl() * 1.25,
           alignment: Alignment.center,
-          margin: EdgeInsets.all(5.0),
+          margin: const EdgeInsets.all(5.0),
           decoration: BoxDecoration(
             color: AppColors.orangeColor,
             borderRadius:
@@ -109,16 +59,16 @@ class SocialAppSearchBoxState extends State<SocialAppSearchBox> {
         border: OutlineInputBorder(
             borderRadius:
                 BorderRadius.circular(AppSize.borderRadiusSm() * 0.75),
-            borderSide: BorderSide(width: 1, color: Colors.transparent)),
+            borderSide: const BorderSide(width: 1, color: Colors.transparent)),
         errorBorder: OutlineInputBorder(
-          borderSide: BorderSide(width: 1, color: Colors.transparent),
+          borderSide: const BorderSide(width: 1, color: Colors.transparent),
           borderRadius: BorderRadius.circular(AppSize.borderRadiusSm() * 0.75),
         ),
         errorStyle: const TextStyle(color: Colors.red),
         focusedErrorBorder: OutlineInputBorder(
             borderRadius:
                 BorderRadius.circular(AppSize.borderRadiusLg() * 0.75),
-            borderSide: BorderSide(width: 1, color: Colors.transparent)),
+            borderSide: const BorderSide(width: 1, color: Colors.transparent)),
       ),
       style: TextStyle(
           color: AppColors.blueColor,

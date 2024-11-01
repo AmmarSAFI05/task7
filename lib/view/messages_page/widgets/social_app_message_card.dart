@@ -1,12 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../core/constant/app_colors.dart';
-import '../core/constant/app_fonts.dart';
-import '../core/constant/app_sizes.dart';
-import '../core/constant/app_text.dart';
-import '../core/constant/app_images.dart';
-import '../core/text_styles.dart';
-import '../widgets/social_app_circle_avatar.dart';
+import '../../../core/constant/app_colors.dart';
+import '../../../core/constant/app_sizes.dart';
+import '../../../core/text_styles.dart';
+import '../../../widgets/social_app_circle_avatar.dart';
 
 class SocialAppMessageCard extends StatelessWidget {
   final String? profileImage;
@@ -16,13 +12,19 @@ class SocialAppMessageCard extends StatelessWidget {
   final int? numberUnreadMessage;
   final bool? online;
 
-  SocialAppMessageCard(this.profileImage, this.username, this.userMessage,
-      this.timeMessage, this.online,
-      [this.numberUnreadMessage]);
+  const SocialAppMessageCard({
+    super.key,
+    this.profileImage,
+    this.username,
+    this.userMessage,
+    this.timeMessage,
+    this.online,
+    this.numberUnreadMessage,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: AppSize.xxl() * 2.7,
       child: Column(
         children: [
@@ -41,14 +43,14 @@ class SocialAppMessageCard extends StatelessWidget {
                       children: [
                         Text(
                           username!,
-                          style: AppTextStyles.MyMessageTitle,
-                          overflow: TextOverflow.ellipsis, // Prevent overflow
+                          style: AppTextStyles.messageTitle,
+                          overflow: TextOverflow.ellipsis,
                           maxLines: 1,
                         ),
                         SizedBox(height: AppSize.xsm() * 0.50),
                         Text(
                           userMessage!,
-                          style: AppTextStyles.NewMessage,
+                          style: AppTextStyles.newMessage,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 2,
                         ),
@@ -59,15 +61,14 @@ class SocialAppMessageCard extends StatelessWidget {
                     children: [
                       Text(
                         timeMessage!,
-                        style: AppTextStyles.MessageTime,
+                        style: AppTextStyles.messageTime,
                         overflow: TextOverflow.ellipsis,
                         maxLines: 1,
                       ),
                       SizedBox(width: AppSize.xsm() * 0.25),
-                      Icon(
-                        Icons.arrow_back_ios_new,
-                        size: 16,
-                      ),
+                      Icon(Icons.arrow_back_ios_new,
+                          size: AppSize.md(),
+                          color: AppColors.lighterGreyColor),
                     ],
                   ),
                 ],
@@ -82,7 +83,7 @@ class SocialAppMessageCard extends StatelessWidget {
                   child: Container(
                     height: AppSize.xxl() * 0.60,
                     width: AppSize.xxl() * 0.60,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: AppColors.blueColor,
                       shape: BoxShape.circle,
                     ),
@@ -96,11 +97,10 @@ class SocialAppMessageCard extends StatelessWidget {
                 ),
             ],
           ),
-          Spacer(),
+          const Spacer(),
           Padding(
-            padding:
-                EdgeInsets.only(left: 62), // Account for avatar and spacing
-            child: Divider(
+            padding: EdgeInsets.only(left: AppSize.xxl() * 1.50),
+            child: const Divider(
               color: AppColors.lighterGreyColor,
               thickness: 1,
             ),

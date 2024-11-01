@@ -20,17 +20,17 @@ class AppTextStyles {
       fontWeight: AppFontWeight.med,
       color: AppColors.bgColor);
 
-  static TextStyle MyMessageTitle = TextStyle(
+  static TextStyle messageTitle = TextStyle(
       fontSize: AppSize.fontSizeSm() * 1.25,
       fontWeight: AppFontWeight.bold,
       color: AppColors.black);
 
-  static TextStyle NewMessage = TextStyle(
+  static TextStyle newMessage = TextStyle(
       fontSize: AppSize.fontSizeSm()  ,
       fontWeight: AppFontWeight.normal,
       color: AppColors.greyColor);
 
-  static TextStyle MessageTime = TextStyle(
+  static TextStyle messageTime = TextStyle(
       fontSize: AppSize.fontSizeSm()  ,
       fontWeight: AppFontWeight.normal,
       color: AppColors.lighterGreyColor);

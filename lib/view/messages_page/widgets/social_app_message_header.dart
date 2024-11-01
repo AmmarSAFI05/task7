@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import '../core/constant/app_images.dart';
-import '../core/constant/app_sizes.dart';
-import '../core/constant/app_text.dart';
-import '../core/text_styles.dart';
-import '../widgets/social_app_circle_avatar.dart';
+import '../../../core/constant/app_colors.dart';
+import '../../../core/constant/app_images.dart';
+import '../../../core/constant/app_sizes.dart';
+import '../../../core/constant/app_text.dart';
+import '../../../core/text_styles.dart';
+import '../../../widgets/social_app_circle_avatar.dart';
 
-class SocialAppMeesageHeader extends StatelessWidget {
+class SocialAppMessageHeader extends StatelessWidget {
+  const SocialAppMessageHeader({super.key});
+
   @override
   Widget build(BuildContext context) {
 
@@ -15,7 +18,7 @@ class SocialAppMeesageHeader extends StatelessWidget {
         Expanded(
           child: Row(
             children: [
-              Align(
+              const Align(
                 alignment: Alignment.centerRight,
                 child: SocialAppCircleAvatar(imageUrl: AppImages.profile7),
               ),
@@ -25,12 +28,12 @@ class SocialAppMeesageHeader extends StatelessWidget {
                 children: [
                   Text(
                     AppText.myMessages,
-                    style: AppTextStyles.MyMessageTitle,
+                    style: AppTextStyles.messageTitle,
                   ),
-                  SizedBox(),
+                  const SizedBox(),
                   Text(
                     AppText.newMessages,
-                    style: AppTextStyles.NewMessage,
+                    style: AppTextStyles.newMessage,
                   ),
                 ],
               ),
@@ -42,7 +45,7 @@ class SocialAppMeesageHeader extends StatelessWidget {
           child: Container(
             width: AppSize.lg(),
             height:AppSize.lg(),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(AppImages.notification),
               ),
@@ -50,8 +53,9 @@ class SocialAppMeesageHeader extends StatelessWidget {
             child: Align(
               alignment: const Alignment(1, -1),
               child: Image.asset(
-                AppImages.orangeDot,
+                AppImages.greenDot,
                 width: AppSize.iconSm() * 0.50,
+                color: AppColors.orangeColor,
               ),
             ),
           ),
