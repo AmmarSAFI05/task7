@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../core/constant/app_fonts.dart';
 import '../core/constant/app_sizes.dart';
 
@@ -11,14 +10,14 @@ class CustomContainer extends StatelessWidget {
   final bool hasShadow;
   final BoxShadow? customShadow;
   const CustomContainer({
-    Key? key,
+    super.key,
     required this.containerColor,
     required this.borderColor,
     required this.textColor,
     required this.text,
     this.hasShadow = false,
     this.customShadow,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +38,7 @@ class CustomContainer extends StatelessWidget {
               BoxShadow(
                 color: Colors.grey.withOpacity(0.5),
                 blurRadius: 4,
-                offset: Offset(2, 2),
+                offset: const Offset(2, 2),
                 spreadRadius: 1,
               ),
         ]
