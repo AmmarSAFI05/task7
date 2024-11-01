@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-// import 'package:shared_preferences/shared_preferences.dart';
+import 'package:task7_demo/core/constant/const_data.dart';
 import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_images.dart';
 import '../../../core/constant/app_sizes.dart';
@@ -11,7 +10,6 @@ import '../../../widgets/social_app_text_form_field.dart';
 import '../../../widgets/soical_app_button.dart';
 import '../../home_page/view/home_page.dart';
 import '../../sign_up_page/view/sign_up_page.dart';
-// import '../../sign_up_page/view/sign_up_page.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -21,9 +19,17 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
-  TextEditingController EmailController = TextEditingController();
-  TextEditingController PasswordController = TextEditingController();
-  GlobalKey<FormState> formstate = GlobalKey();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final ConstData appConst = ConstData();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,154 +40,152 @@ class _SignInPageState extends State<SignInPage> {
             child: Container(
               margin: EdgeInsets.only(top: AppSize.xl()),
               width: AppSize.screenWidth * 0.9,
-              child: SingleChildScrollView(
-                child: Form(
-                  key: formstate,
-                  child: Column(
-                    children: [
-                      Image.asset(
-                        AppImages.focalIcon,
-                        width: AppSize.iconLg() * 1.75,
-                      ),
-                      SizedBox(
-                        height: AppSize.xl(),
-                      ),
-                      SocialAppTextFormField(
-                        controller: EmailController,
-                        hintText: "Email",
-                        keyboardType: TextInputType.emailAddress,
-                        isPassword: false,
-                        validator: (val) => LoginValidator.validatePassword(
-                            EmailController.text),
-                      ),
-                      SizedBox(
-                        height: AppSize.md(),
-                      ),
-                      //////////////////
-                      SocialAppTextFormField(
-                        controller: PasswordController,
-                        hintText: "Password",
-                        keyboardType: TextInputType.visiblePassword,
-                        isPassword: true,
-                        validator: (val) => LoginValidator.validatePassword(
-                            PasswordController.text),
-                      ),
-                      SizedBox(
-                        height: AppSize.xl(),
-                      ),
-                      SocialAppButton(
-                        text: 'Log in ',
-                        onPressed: () async{
-
-                          if (formstate.currentState!.validate()) {
-                            //  await prefs.setBool(ConstData.isLogin, true);
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => HomePage()));
-                          }
-                        },
-                        textColor: AppColors.bgColor,
-                      ),
-                      SizedBox(
-                        height: AppSize.xl(),
-                      ),
-                      Text(
-                        AppText.forgotPassword,
-                        style: AppTextStyles.forgotpassword,
-                      ),
-                      SizedBox(
-                        height: AppSize.xl() * 1.5,
-                      ),
-                      Row(
-                        children: [
-                          Expanded(
-                              child: Divider(
-                                  color: AppColors.greyColor, thickness: 2)),
-                          Padding(
-                            padding:
-                            EdgeInsets.symmetric(horizontal: AppSize.md()),
-                            child: Text("or",
-                                style: TextStyle(
-                                    color: AppColors.greyColor,
-                                    fontSize: AppSize.fontSizeMd())),
-                          ),
-                          Expanded(
-                              child: Divider(
-                                  color: AppColors.greyColor, thickness: 2)),
-                        ],
-                      ),
-                      SizedBox(
-                        height: AppSize.md() * 1.5,
-                      ),
-                      SocialAppButton(
-                          backgroundColor: AppColors.blueColor,
-                          onPressed: () {
-
-                          },
-                          text: '',
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.asset(
-                                AppImages.facebook,
-                                width: AppSize.md() * 1.25,
-                              ),
-                              SizedBox(
-                                width: AppSize.md() * 1.5,
-                              ),
-                              Text(
-                                AppText.facebookLogin,
-                                style: AppTextStyles.loginwithfacebook,
-                              )
-                            ],
-                          )),
-                      SizedBox(
-                        height: AppSize.md(),
-                      ),
-                      ////////////////////////////////
-                      SocialAppButton(
-                        backgroundColor: AppColors.fieldColor,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.asset(
-                              AppImages.google,
-                              width: AppSize.md() * 1.50,
-                            ),
-                            SizedBox(
-                              width: AppSize.md() * 1.5,
-                            ),
-                            Text(AppText.googleLogin,
-                                style: AppTextStyles.loginwithgoogle),
-                          ],
+              child: Form(
+                key: formKey,
+                child: Column(
+                  children: [
+                    Image.asset(
+                      AppImages.focalIcon,
+                      width: AppSize.iconLg() * 1.75,
+                    ),
+                    SizedBox(height: AppSize.xl()),
+                    // Email field
+                    SocialAppTextFormField(
+                      controller: emailController,
+                      hintText: "Email",
+                      keyboardType: TextInputType.emailAddress,
+                      isPassword: false,
+                      validator: (val) =>
+                          LoginValidator.validateEmail(emailController.text),
+                    ),
+                    SizedBox(height: AppSize.md()),
+                    // Password field
+                    SocialAppTextFormField(
+                      controller: passwordController,
+                      hintText: "Password",
+                      keyboardType: TextInputType.visiblePassword,
+                      isPassword: true,
+                      validator: (val) => LoginValidator.validatePassword(
+                          passwordController.text),
+                    ),
+                    SizedBox(height: AppSize.xl()),
+                    // Log In button
+                    SocialAppButton(
+                      text: 'Log in',
+                      onPressed: () async {
+                        if (formKey.currentState!.validate()) {
+                          // Write email and password to secure storage
+                          await appConst.WriteSecureData(
+                              "email", emailController.text);
+                          await appConst.WriteSecureData(
+                              "password", passwordController.text);
+                          // Navigate to HomePage and replace SignInPage
+                          Navigator.of(context).pushReplacement(
+                            MaterialPageRoute(builder: (context) => HomePage()),
+                          );
+                        }
+                      },
+                      textColor: AppColors.bgColor,
+                    ),
+                    SizedBox(height: AppSize.xl()),
+                    Text(
+                      AppText.forgotPassword,
+                      style: AppTextStyles.forgotpassword,
+                    ),
+                    SizedBox(height: AppSize.xl() * 1.5),
+                    // Divider with "or"
+                    Row(
+                      children: [
+                        Expanded(
+                          child:
+                          Divider(color: AppColors.greyColor, thickness: 2),
                         ),
-                        // onPressed: () {},
-                        text: '', onPressed: () {},
-                      ),
-                      SizedBox(
-                        height: AppSize.xl() * 3.75,
-                      ),
-                      Row(
+                        Padding(
+                          padding:
+                          EdgeInsets.symmetric(horizontal: AppSize.md()),
+                          child: Text(
+                            "or",
+                            style: TextStyle(
+                                color: AppColors.greyColor,
+                                fontSize: AppSize.fontSizeMd()),
+                          ),
+                        ),
+                        Expanded(
+                          child:
+                          Divider(color: AppColors.greyColor, thickness: 2),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: AppSize.md() * 1.5),
+                    // Facebook Login Button
+                    SocialAppButton(
+                      backgroundColor: AppColors.blueColor,
+                      onPressed: () {
+                        // Add Facebook login functionality
+                      },
+                      text: '',
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
-                            AppText.notRegistered,
-                            style: AppTextStyles.dont_have_account,
+                          Image.asset(
+                            AppImages.facebook,
+                            width: AppSize.md() * 1.25,
                           ),
-                          InkWell(
-                            onTap: () {
-
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => SignUpPage()));
-                            },
-                            child: Text(
-                              AppText.signUp,
-                              style: AppTextStyles.sign_up,
-                            ),
+                          SizedBox(width: AppSize.md() * 1.5),
+                          Text(
+                            AppText.facebookLogin,
+                            style: AppTextStyles.loginwithfacebook,
                           ),
                         ],
                       ),
-                    ],
-                  ),
+                    ),
+                    SizedBox(height: AppSize.md()),
+                    // Google Login Button
+                    SocialAppButton(
+                      backgroundColor: AppColors.fieldColor,
+                      onPressed: () {
+                        // Add Google login functionality
+                      },
+                      text: '',
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            AppImages.google,
+                            width: AppSize.md() * 1.50,
+                          ),
+                          SizedBox(width: AppSize.md() * 1.5),
+                          Text(
+                            AppText.googleLogin,
+                            style: AppTextStyles.loginwithgoogle,
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: AppSize.xl() * 3.75),
+                    // Sign Up option
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          AppText.notRegistered,
+                          style: AppTextStyles.dont_have_account,
+                        ),
+                        InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (context) => SignUpPage()),
+                            );
+                          },
+                          child: Text(
+                            AppText.signUp,
+                            style: AppTextStyles.sign_up,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ),

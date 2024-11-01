@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     AppSize.init(context);
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Task 7',
       theme: ThemeData(
         fontFamily: "Poppins",

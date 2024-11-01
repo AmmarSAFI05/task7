@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:task7_demo/core/constant/const_data.dart';
+import 'package:task7_demo/core/functions/register_validator.dart';
 
 // import 'package:task7/view/sign_in_page/view/sign_in_page.dart';
 // import 'package:shared_preferences/shared_preferences.dart';
@@ -6,7 +8,6 @@ import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_images.dart';
 import '../../../core/constant/app_sizes.dart';
 import '../../../core/constant/app_text.dart';
-import '../../../core/functions/login_validator.dart';
 import '../../../core/text_styles.dart';
 import '../../../widgets/social_app_text_form_field.dart';
 import '../../../widgets/soical_app_button.dart';
@@ -25,6 +26,7 @@ class _SignUpPageState extends State<SignUpPage> {
   TextEditingController PasswordController = TextEditingController();
   TextEditingController UserNameController = TextEditingController();
   GlobalKey<FormState> formstate = GlobalKey();
+  final ConstData appConst = ConstData();
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +54,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       hintText: "FullName",
                       keyboardType: TextInputType.text,
                       isPassword: false,
-                      validator: (val) => LoginValidator.validatePassword(
+                      validator: (val) => RegisterValidator.validateUsername(
                           UserNameController.text),
                     ),
                     SizedBox(
@@ -64,7 +66,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       keyboardType: TextInputType.emailAddress,
                       isPassword: false,
                       validator: (val) =>
-                          LoginValidator.validatePassword(EmailController.text),
+                          RegisterValidator.validateEmail(EmailController.text),
                     ),
                     SizedBox(
                       height: AppSize.md(),
@@ -74,7 +76,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       hintText: "Password",
                       keyboardType: TextInputType.visiblePassword,
                       isPassword: true,
-                      validator: (val) => LoginValidator.validatePassword(
+                      validator: (val) => RegisterValidator.validatePassword(
                           PasswordController.text),
                     ),
                     SizedBox(
@@ -82,11 +84,18 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                     SocialAppButton(
                       text: 'Sign Up ',
-                      onPressed: () {
+                      onPressed: () async {
                         if (formstate.currentState!.validate()) {
-                          //  await prefs.setBool(ConstData.isLogin, true);
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => HomePage()));
+                          // Write email and password to secure storage
+                          await appConst.WriteSecureData(
+                              "email", EmailController.text);
+                          await appConst.WriteSecureData(
+                              "password", PasswordController.text);
+
+                          // Navigate to HomePage and replace SignInPage
+                          Navigator.of(context).pushReplacement(
+                            MaterialPageRoute(builder: (context) => HomePage()),
+                          );
                         }
                       },
                       textColor: AppColors.bgColor,
