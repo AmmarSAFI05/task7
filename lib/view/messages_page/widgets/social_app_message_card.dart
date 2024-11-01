@@ -97,14 +97,6 @@ class SocialAppMessageCard extends StatelessWidget {
                 ),
             ],
           ),
-          const Spacer(),
-          Padding(
-            padding: EdgeInsets.only(left: AppSize.xxl() * 1.50),
-            child: const Divider(
-              color: AppColors.lighterGreyColor,
-              thickness: 1,
-            ),
-          ),
         ],
       ),
     );
