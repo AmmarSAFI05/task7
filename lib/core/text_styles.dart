@@ -4,6 +4,7 @@ import 'constant/app_fonts.dart';
 import 'constant/app_sizes.dart';
 
 class AppTextStyles {
+
   static TextStyle onBoardingTitle = TextStyle(
       fontSize: AppSize.fontSizeSm() * 1.25,
       fontWeight: AppFontWeight.bold,
@@ -78,5 +79,28 @@ class AppTextStyles {
         0.75,
   );
 
+
+  //Nour Schedule Page
+  static TextStyle schedulePageStyle = TextStyle(
+      color: AppColors.black,
+      fontSize: AppSize.fontSizeSm() * 1.1,
+      fontFamily: 'Poppins',
+      fontWeight: AppFontWeight.xbold,
+      height: 0.5
+  );
+
+  static TextStyle schedulePageTitleStyle = TextStyle(
+    color: AppColors.lightGreyColor,
+    fontSize: AppSize.fontSizeSm() * 1.5,
+    fontFamily: 'Poppins',
+    fontWeight: AppFontWeight.bold,
+  );
+
+  static TextStyle scheduleButtonStyle = TextStyle(
+    color: AppColors.bgColor,
+    fontSize: AppSize.fontSizeSm() * 1.1,
+    fontFamily: 'Poppins',
+    fontWeight: AppFontWeight.normal,
+  );
 
 }

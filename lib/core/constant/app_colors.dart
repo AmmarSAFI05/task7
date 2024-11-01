@@ -15,4 +15,6 @@ class AppColors {
   static const Color purpleColor = Color(0xff8D5EF2);
   static const Color yellowColor = Color(0xffFCCC75);
   static const Color greenDot= Color(0xff4ED442);
+  //Nour
+  static const Color lightGreyContainerSchedColor= Color(0xffC7C9D9);
 }
