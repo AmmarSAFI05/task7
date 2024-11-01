@@ -60,4 +60,5 @@ class AppText {
   static String username5 = "Andy Warhol";
   static String userMessage5 = "that’s true bro, hahaha";
   static String username6 = "Thomas Partrey";
+  static String userMessage6 = "nice sam";
 }

@@ -21,6 +21,7 @@ class AppImages {
 static const explore = "assets/images/icons/explore.png";
 
 
+
 // App Photos
   static const communityText = "assets/images/photos/community.png";
   static const containerBackground =

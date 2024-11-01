@@ -82,33 +82,12 @@ class AppTextStyles {
     fontSize: AppSize.sm(),
     fontWeight: FontWeight.bold,
   );
-  static TextStyle detailsTitle = TextStyle(
-    color: Colors.white,
-    fontSize: AppSize.lg() *0.8,
-    fontWeight: FontWeight.bold,
-  );
   static TextStyle detailsTime =  TextStyle(
       color:
       AppColors.lightGreyColor,
       fontSize:
       AppSize.fontSizeSm() *
           0.8);
-  static TextStyle detailsUsername =  TextStyle(
-    color: AppColors.bgColor,
-    fontSize:
-    AppSize.fontSizeMd(),
-    fontWeight:
-    AppFontWeight.med,
-  );
-  static TextStyle detailsSubUsername =  TextStyle(
-    color: AppColors
-        .lightGreyColor,
-    fontSize:
-    AppSize.fontSizeSm() *
-        0.75,
-  );
-
-
   //Nour Schedule Page
   static TextStyle schedulePageStyle = TextStyle(
       color: AppColors.black,
@@ -132,4 +111,28 @@ class AppTextStyles {
     fontWeight: AppFontWeight.normal,
   );
 
+  static TextStyle messageTitle = TextStyle(
+      fontSize: AppSize.fontSizeSm() * 1.25,
+      fontWeight: AppFontWeight.bold,
+      color: AppColors.black);
+
+  static TextStyle subMessageTitle = TextStyle(
+      fontSize: AppSize.fontSizeSm()  ,
+      fontWeight: AppFontWeight.normal,
+      color: AppColors.lighterGreyColor2);
+
+  static TextStyle newMessage = TextStyle(
+      fontSize: AppSize.fontSizeSm()  ,
+      fontWeight: AppFontWeight.normal,
+      color: AppColors.greyColor);
+
+  static TextStyle messageTime = TextStyle(
+      fontSize: AppSize.fontSizeSm()  ,
+      fontWeight: AppFontWeight.normal,
+      color: AppColors.lighterGreyColor2);
+
+  static TextStyle numberUnreadMessage = TextStyle(
+      fontSize: AppSize.fontSizeSm()  ,
+      fontWeight: AppFontWeight.med,
+      color: AppColors.bgColor);
 }
