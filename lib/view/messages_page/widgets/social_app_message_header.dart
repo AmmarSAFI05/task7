@@ -40,26 +40,20 @@ class SocialAppMessageHeader extends StatelessWidget {
             ],
           ),
         ),
-        Align(
-          alignment: Alignment.centerRight,
-          child: Container(
-            width: AppSize.lg(),
-            height:AppSize.lg(),
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(AppImages.notification),
-              ),
-            ),
-            child: Align(
-              alignment: const Alignment(1, -1),
-              child: Image.asset(
-                AppImages.greenDot,
-                width: AppSize.iconSm() * 0.50,
-                color: AppColors.orangeColor,
-              ),
-            ),
-          ),
-        ),
+       Stack(children: [
+         Image.asset(
+           AppImages.notification,
+           width: AppSize.lg() * 0.75,
+         ),
+         Positioned(
+           right: 0,
+           child: Image.asset(
+             AppImages.greenDot,
+             width: 7.5,
+             color: AppColors.orangeColor,
+           ),
+         ),
+       ],)
       ],
     );
 

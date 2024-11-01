@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:task7_demo/core/constant/const_data.dart';
-import 'package:task7_demo/view/home_page/view/home_page.dart';
+import 'package:task7_demo/view/bottom_nav_bar_page/view/bottom_nav_bar_page.dart';
 import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_images.dart';
 import '../../../core/constant/app_sizes.dart';
@@ -53,7 +53,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       // ignore: use_build_context_synchronously
       context,
       MaterialPageRoute(
-        builder: (context) => isLoggedIn ? const HomePage() :const SignInPage(),
+        builder: (context) => isLoggedIn ? const BottomNavigationBarPage() :const SignInPage(),
       ),
     );
   }

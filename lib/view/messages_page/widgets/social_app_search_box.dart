@@ -41,19 +41,22 @@ class SocialAppSearchBoxState extends State<SocialAppSearchBox> {
             height: 2,
             color: AppColors.lighterGreyColor2,
             fontSize: AppSize.fontSizeSm() * 1.25),
-        suffixIcon: Container(
-          width: AppSize.xxl() * 1.25,
-          height: AppSize.xxl() * 1.25,
-          alignment: Alignment.center,
-          margin: const EdgeInsets.all(5.0),
-          decoration: BoxDecoration(
-            color: AppColors.orangeColor,
-            borderRadius:
-                BorderRadius.circular(AppSize.borderRadiusSm() * 0.50),
-          ),
-          child: Image.asset(
-            AppImages.search,
-            width: AppSize.iconMd() * 0.75,
+        suffixIcon: Padding(
+          padding: EdgeInsets.only(right: AppSize.sm()*0.5),
+          child: Container(
+            width: AppSize.xxl() * 1.25,
+            height: AppSize.xxl() * 1.25,
+            alignment: Alignment.center,
+            margin: const EdgeInsets.all(5.0),
+            decoration: BoxDecoration(
+              color: AppColors.orangeColor,
+              borderRadius:
+                  BorderRadius.circular(AppSize.borderRadiusSm() * 0.50),
+            ),
+            child: Image.asset(
+              AppImages.search,
+              width: AppSize.iconMd() * 0.75,
+            ),
           ),
         ),
         border: OutlineInputBorder(

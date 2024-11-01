@@ -15,8 +15,6 @@ class MessagePage extends StatefulWidget {
 }
 
 class _MessagePageState extends State<MessagePage> {
-  final TextEditingController searchController = TextEditingController();
-
   final List<Map<String, dynamic>> messages = [
     {
       "profileImage": AppImages.profile1,
@@ -25,6 +23,7 @@ class _MessagePageState extends State<MessagePage> {
       "timeMessage": "15 min",
       "online": true,
       "numberUnreadMessage": 4,
+      "hasUnreadMessage":true
     },
     {
       "profileImage": AppImages.profile2,
@@ -32,6 +31,7 @@ class _MessagePageState extends State<MessagePage> {
       "userMessage": AppText.userMessage2,
       "timeMessage": "Yesterday",
       "online": false,
+      "hasUnreadMessage":false
     },
     {
       "profileImage": AppImages.profile3,
@@ -40,6 +40,7 @@ class _MessagePageState extends State<MessagePage> {
       "timeMessage": "Yesterday",
       "online": true,
       "numberUnreadMessage": 1,
+      "hasUnreadMessage":true
     },
     {
       "profileImage": AppImages.profile5,
@@ -48,6 +49,8 @@ class _MessagePageState extends State<MessagePage> {
       "timeMessage": "2 week ago",
       "online": true,
       "numberUnreadMessage": 2,
+      "hasUnreadMessage":true
+
     },
     {
       "profileImage": AppImages.profile4,
@@ -55,6 +58,7 @@ class _MessagePageState extends State<MessagePage> {
       "userMessage": AppText.userMessage5,
       "timeMessage": "14/08/20",
       "online": false,
+      "hasUnreadMessage":false
     },
     {
       "profileImage": AppImages.profile6,
@@ -62,8 +66,11 @@ class _MessagePageState extends State<MessagePage> {
       "userMessage": AppText.userMessage6,
       "timeMessage": "13/08/20",
       "online": false,
+      "hasUnreadMessage":false
     },
   ];
+
+  final TextEditingController searchController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -100,6 +107,7 @@ class _MessagePageState extends State<MessagePage> {
                           timeMessage: message["timeMessage"],
                           online: message["online"],
                           numberUnreadMessage: message["numberUnreadMessage"],
+                          hasUnreadMessage: message["hasUnreadMessage"],
                         ),
                         if (index != messages.length - 1)
                           Divider(

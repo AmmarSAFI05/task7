@@ -90,13 +90,13 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Image.asset(
                           AppImages.notification,
-                          width: AppSize.lg() * 0.6,
+                          width: AppSize.lg() * 0.75,
                         ),
                         Positioned(
                           right: 0,
                           child: Image.asset(
                             AppImages.greenDot,
-                            width: 5,
+                            width: 7.5,
                             color: AppColors.orangeColor,
                           ),
                         ),
@@ -250,7 +250,7 @@ class _HomePageState extends State<HomePage> {
                               BorderRadius.circular(AppSize.borderRadiusSm()),
                           color: currentPageIndex == index
                               ? AppColors.orangeColor
-                              : AppColors.lightGreyColor1,
+                              : AppColors.lightGreyColor,
                         ),
                       ),
                     ),

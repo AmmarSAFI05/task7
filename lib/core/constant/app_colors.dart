@@ -16,7 +16,6 @@ class AppColors {
   static const Color greenDot = Color(0xff4ED442);
   static const Color bluelight = Color(0xff4DC9D1); //added by judy
   static const Color redshadow = Color(0xffEC5F5F); //added by judy
-  static const Color greenDot= Color(0xff4ED442);
   //Nour
   static const Color lightGreyContainerSchedColor= Color(0xffC7C9D9);
 }

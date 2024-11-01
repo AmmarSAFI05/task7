@@ -2,8 +2,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:task7_demo/core/text_styles.dart';
 
-import '../../../core/constant/app_colors.dart';
-import '../../../core/constant/app_fonts.dart';
 import '../../../core/constant/app_sizes.dart';
 
 class TagWidget extends StatelessWidget {

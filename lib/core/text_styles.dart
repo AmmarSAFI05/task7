@@ -125,6 +125,10 @@ class AppTextStyles {
       fontSize: AppSize.fontSizeSm()  ,
       fontWeight: AppFontWeight.normal,
       color: AppColors.greyColor);
+  static TextStyle newUnreadMessage = TextStyle(
+      fontSize: AppSize.fontSizeSm()*1.02  ,
+      fontWeight: AppFontWeight.normal,
+      color: AppColors.greyColor);
 
   static TextStyle messageTime = TextStyle(
       fontSize: AppSize.fontSizeSm()  ,
@@ -135,26 +139,26 @@ class AppTextStyles {
       fontSize: AppSize.fontSizeSm()  ,
       fontWeight: AppFontWeight.med,
       color: AppColors.bgColor);
-  static TextStyle forgotpassword= TextStyle(
+  static TextStyle forgotPassword= TextStyle(
       fontSize: AppSize.fontSizeSm()*1.25,
       fontWeight: AppFontWeight.xMed,
       color: AppColors.blueColor);
 
 
-  static TextStyle loginwithfacebook= TextStyle(
+  static TextStyle loginWithFacebook= TextStyle(
       fontSize: AppSize.fontSizeSm()*1.25,
       fontWeight: AppFontWeight.med,
       color: AppColors.bgColor);
 
 
-  static TextStyle loginwithgoogle= TextStyle(
+  static TextStyle loginWithGoogle= TextStyle(
       fontSize: AppSize.fontSizeSm()*1.25,
       fontWeight: AppFontWeight.med,
 
       color: AppColors.black);
 
 
-  static TextStyle dontHavaAcount= TextStyle(
+  static TextStyle doNotHaveAccount= TextStyle(
       fontSize: AppSize.fontSizeSm(),
       fontWeight: AppFontWeight.normal,
       color: AppColors.lightGreyColor
@@ -165,7 +169,25 @@ class AppTextStyles {
       fontWeight: AppFontWeight.normal,
       color: AppColors.blueColor);
 
-
+  static TextStyle detailsTitleA = TextStyle(
+    color: Colors.white,
+    fontSize: AppSize.lg() *0.8,
+    fontWeight: FontWeight.bold,
+  );
+  static TextStyle detailsUsernameA =  TextStyle(
+    color: AppColors.bgColor,
+    fontSize:
+    AppSize.fontSizeMd(),
+    fontWeight:
+    AppFontWeight.med,
+  );
+  static TextStyle detailsSubUsernameA =  TextStyle(
+    color: AppColors
+        .lightGreyColor,
+    fontSize:
+    AppSize.fontSizeSm() *
+        0.75,
+  );
 
 
 }

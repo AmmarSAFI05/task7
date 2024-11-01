@@ -141,7 +141,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             ),
                             Text(
                               AppText.facebookLogin,
-                              style: AppTextStyles.loginwithfacebook,
+                              style: AppTextStyles.loginWithFacebook,
                             )
                           ],
                         )),
@@ -165,7 +165,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             width: AppSize.md() * 1.5,
                           ),
                           Text(AppText.googleLogin,
-                              style: AppTextStyles.loginwithgoogle),
+                              style: AppTextStyles.loginWithGoogle),
                         ],
                       ),
                     ),
@@ -186,7 +186,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 color: AppColors.greyColor),
                             children: const [
                               TextSpan(
-                                text: "By signing up you accept the",
+                                text: "By signing up you accept the ",
                                 style: TextStyle(),
                               ),
                               TextSpan(
@@ -210,8 +210,8 @@ class _SignUpPageState extends State<SignUpPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              AppText.registered,
-                              style: AppTextStyles.dontHavaAcount,
+                              "${AppText.registered} ",
+                              style: AppTextStyles.doNotHaveAccount,
                             ),
                             InkWell(
                               onTap: () {

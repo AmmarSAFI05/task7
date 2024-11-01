@@ -10,6 +10,7 @@ class SocialAppMessageCard extends StatelessWidget {
   final String? userMessage;
   final String? timeMessage;
   final int? numberUnreadMessage;
+  final bool? hasUnreadMessage;
   final bool? online;
 
   const SocialAppMessageCard({
@@ -19,13 +20,13 @@ class SocialAppMessageCard extends StatelessWidget {
     this.userMessage,
     this.timeMessage,
     this.online,
-    this.numberUnreadMessage,
+    this.numberUnreadMessage, this.hasUnreadMessage,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: AppSize.xxl() * 2.7,
+      height: AppSize.xxl() * 2.3,
       child: Column(
         children: [
           Stack(
@@ -50,7 +51,7 @@ class SocialAppMessageCard extends StatelessWidget {
                         SizedBox(height: AppSize.xsm() * 0.50),
                         Text(
                           userMessage!,
-                          style: AppTextStyles.newMessage,
+                          style:hasUnreadMessage==true?AppTextStyles.newUnreadMessage:AppTextStyles.newMessage,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 2,
                         ),

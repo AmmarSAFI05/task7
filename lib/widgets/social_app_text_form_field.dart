@@ -92,7 +92,7 @@ class SocialAppTextFormFieldState extends State<SocialAppTextFormField> {
             const BorderSide(width: 1, color: Colors.transparent)),
       ),
       style: TextStyle(
-          color: widget.textColor??AppColors.blueColor,
+          color: widget.textColor??AppColors.black,
           height: 2,
           fontSize: AppSize.fontSizeSm() * 1.125),
       cursorErrorColor: Colors.black,

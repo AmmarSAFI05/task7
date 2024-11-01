@@ -91,7 +91,7 @@ class _SignInPageState extends State<SignInPage> {
                     SizedBox(height: AppSize.xl()),
                     Text(
                       AppText.forgotPassword,
-                      style: AppTextStyles.forgotpassword,
+                      style: AppTextStyles.forgotPassword,
                     ),
                     SizedBox(height: AppSize.xl() * 1.5),
                     // Divider with "or"
@@ -135,7 +135,7 @@ class _SignInPageState extends State<SignInPage> {
                           SizedBox(width: AppSize.md() * 1.5),
                           Text(
                             AppText.facebookLogin,
-                            style: AppTextStyles.loginwithfacebook,
+                            style: AppTextStyles.loginWithFacebook,
                           ),
                         ],
                       ),
@@ -158,7 +158,7 @@ class _SignInPageState extends State<SignInPage> {
                           SizedBox(width: AppSize.md() * 1.5),
                           Text(
                             AppText.googleLogin,
-                            style: AppTextStyles.loginwithgoogle,
+                            style: AppTextStyles.loginWithGoogle,
                           ),
                         ],
                       ),
@@ -169,8 +169,8 @@ class _SignInPageState extends State<SignInPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          AppText.notRegistered,
-                          style: AppTextStyles.dontHavaAcount,
+                          "${AppText.notRegistered} ",
+                          style: AppTextStyles.doNotHaveAccount,
                         ),
                         InkWell(
                           onTap: () {

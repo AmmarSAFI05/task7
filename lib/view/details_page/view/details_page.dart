@@ -27,12 +27,15 @@ class _DetailsPageState extends State<DetailsPage> {
       appBar: AppBar(
         backgroundColor: AppColors.bgColor,
         elevation: 0,
-        leading: Padding(
-          padding: EdgeInsets.only(top: AppSize.sm(), left: AppSize.xsm()),
-          child: Image.asset(
-            AppImages.arrowBack,
-            width: AppSize.iconMd(),
-            height: AppSize.iconMd(),
+        leading: InkWell(
+          onTap: (){Navigator.pop(context);},
+          child: Padding(
+            padding: EdgeInsets.only(top: AppSize.sm(), left: AppSize.xsm()),
+            child: Image.asset(
+              AppImages.arrowBack,
+              width: AppSize.iconMd(),
+              height: AppSize.iconMd(),
+            ),
           ),
         ),
         title: Padding(

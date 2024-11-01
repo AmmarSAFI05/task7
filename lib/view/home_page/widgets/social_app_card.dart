@@ -4,7 +4,6 @@ import 'package:task7_demo/core/text_styles.dart';
 import 'package:task7_demo/view/home_page/widgets/social_app_tags.dart';
 
 import '../../../core/constant/app_colors.dart';
-import '../../../core/constant/app_fonts.dart';
 import '../../../core/constant/app_images.dart';
 import '../../../core/constant/app_sizes.dart';
 import '../../../core/constant/app_text.dart';
@@ -19,7 +18,7 @@ class SocialAppCard extends StatelessWidget {
     return   GestureDetector(
         onTap: () =>
             Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => DetailsPage(),
+              builder: (context) => const DetailsPage(),
             )),
         child: Container(
           width: AppSize.screenWidth * 0.8,
@@ -67,7 +66,7 @@ class SocialAppCard extends StatelessWidget {
                     children: [
                       Text(
                         AppText.detailsTitle,
-                        style: AppTextStyles.detailsTitle
+                        style: AppTextStyles.detailsTitleA
                       ),
                       SizedBox(height: AppSize.sm()),
                       Row(
@@ -89,7 +88,7 @@ class SocialAppCard extends StatelessWidget {
                           const TagWidget(
                               text: '6 lessons',
                               color:
-                              AppColors.lightBlueColor),
+                              AppColors.bluelight),
                           SizedBox(
                               width: AppSize.sm() * 0.75),
                           const TagWidget(
@@ -120,11 +119,11 @@ class SocialAppCard extends StatelessWidget {
                             children: [
                               Text(
                                 AppText.detailsUsername,
-                                style: AppTextStyles.detailsUsername,
+                                style: AppTextStyles.detailsUsernameA,
                               ),
                               Text(
                                 AppText.detailsSubUsername,
-                                style:AppTextStyles.detailsSubUsername,
+                                style:AppTextStyles.detailsSubUsernameA,
 
                               ),
                             ],
