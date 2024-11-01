@@ -21,7 +21,7 @@ class AppTextStyles {
       color: AppColors.bgColor);
 
   //Nour Schedule Page
-  static TextStyle SchedulePageStyle = TextStyle(
+  static TextStyle schedulePageStyle = TextStyle(
       color: AppColors.black,
       fontSize: AppSize.fontSizeSm() * 1.1,
       fontFamily: 'Poppins',
@@ -29,14 +29,14 @@ class AppTextStyles {
       height: 0.5
   );
 
-  static TextStyle SchedulePageTitleStyle = TextStyle(
+  static TextStyle schedulePageTitleStyle = TextStyle(
     color: AppColors.lightGreyColor,
     fontSize: AppSize.fontSizeSm() * 1.5,
     fontFamily: 'Poppins',
     fontWeight: AppFontWeight.bold,
   );
 
-  static TextStyle ScheduleButtonStyle = TextStyle(
+  static TextStyle scheduleButtonStyle = TextStyle(
     color: AppColors.bgColor,
     fontSize: AppSize.fontSizeSm() * 1.1,
     fontFamily: 'Poppins',
