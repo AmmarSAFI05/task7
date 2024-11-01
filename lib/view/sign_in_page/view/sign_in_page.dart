@@ -81,7 +81,7 @@ class _SignInPageState extends State<SignInPage> {
                               "password", passwordController.text);
                           // Navigate to HomePage and replace SignInPage
                           Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(builder: (context) => HomePage()),
+                            MaterialPageRoute(builder: (context) =>const  HomePage()),
                           );
                         }
                       },
@@ -96,7 +96,7 @@ class _SignInPageState extends State<SignInPage> {
                     // Divider with "or"
                     Row(
                       children: [
-                        Expanded(
+                        const   Expanded(
                           child:
                           Divider(color: AppColors.greyColor, thickness: 2),
                         ),
@@ -110,7 +110,7 @@ class _SignInPageState extends State<SignInPage> {
                                 fontSize: AppSize.fontSizeMd()),
                           ),
                         ),
-                        Expanded(
+                        const  Expanded(
                           child:
                           Divider(color: AppColors.greyColor, thickness: 2),
                         ),
@@ -175,7 +175,7 @@ class _SignInPageState extends State<SignInPage> {
                           onTap: () {
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                  builder: (context) => SignUpPage()),
+                                  builder: (context) =>const  SignUpPage()),
                             );
                           },
                           child: Text(

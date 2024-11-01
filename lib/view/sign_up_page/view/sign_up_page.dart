@@ -22,10 +22,10 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-  TextEditingController EmailController = TextEditingController();
-  TextEditingController PasswordController = TextEditingController();
-  TextEditingController UserNameController = TextEditingController();
-  GlobalKey<FormState> formstate = GlobalKey();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController userNameController = TextEditingController();
+  GlobalKey<FormState> formState = GlobalKey();
   final ConstData appConst = ConstData();
 
   @override
@@ -38,7 +38,7 @@ class _SignUpPageState extends State<SignUpPage> {
               margin: EdgeInsets.only(top: AppSize.xl()),
               width: AppSize.screenWidth * 0.9,
               child: Form(
-                key: formstate,
+                key: formState,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -50,34 +50,34 @@ class _SignUpPageState extends State<SignUpPage> {
                       height: AppSize.xl(),
                     ),
                     SocialAppTextFormField(
-                      controller: UserNameController,
+                      controller: userNameController,
                       hintText: "FullName",
                       keyboardType: TextInputType.text,
                       isPassword: false,
                       validator: (val) => RegisterValidator.validateUsername(
-                          UserNameController.text),
+                          userNameController.text),
                     ),
                     SizedBox(
                       height: AppSize.md(),
                     ),
                     SocialAppTextFormField(
-                      controller: EmailController,
+                      controller: emailController,
                       hintText: "Email",
                       keyboardType: TextInputType.emailAddress,
                       isPassword: false,
                       validator: (val) =>
-                          RegisterValidator.validateEmail(EmailController.text),
+                          RegisterValidator.validateEmail(emailController.text),
                     ),
                     SizedBox(
                       height: AppSize.md(),
                     ),
                     SocialAppTextFormField(
-                      controller: PasswordController,
+                      controller: passwordController,
                       hintText: "Password",
                       keyboardType: TextInputType.visiblePassword,
                       isPassword: true,
                       validator: (val) => RegisterValidator.validatePassword(
-                          PasswordController.text),
+                          passwordController.text),
                     ),
                     SizedBox(
                       height: AppSize.xl(),
@@ -85,16 +85,16 @@ class _SignUpPageState extends State<SignUpPage> {
                     SocialAppButton(
                       text: 'Sign Up ',
                       onPressed: () async {
-                        if (formstate.currentState!.validate()) {
+                        if (formState.currentState!.validate()) {
                           // Write email and password to secure storage
                           await appConst.WriteSecureData(
-                              "email", EmailController.text);
+                              "email", emailController.text);
                           await appConst.WriteSecureData(
-                              "password", PasswordController.text);
+                              "password", passwordController.text);
 
                           // Navigate to HomePage and replace SignInPage
                           Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(builder: (context) => HomePage()),
+                        MaterialPageRoute(builder: (context) => const HomePage()),
                           );
                         }
                       },
@@ -104,8 +104,8 @@ class _SignUpPageState extends State<SignUpPage> {
                       height: AppSize.xl() * 1.25,
                     ),
                     Row(
-                      children: [
-                        Expanded(
+                      children :  [
+                   const     Expanded(
                             child: Divider(
                                 color: AppColors.greyColor, thickness: 2)),
                         Padding(
@@ -116,7 +116,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                   color: AppColors.greyColor,
                                   fontSize: AppSize.fontSizeMd())),
                         ),
-                        Expanded(
+                     const   Expanded(
                             child: Divider(
                                 color: AppColors.greyColor, thickness: 2)),
                       ],
@@ -150,7 +150,10 @@ class _SignUpPageState extends State<SignUpPage> {
                     ////////////////////////////////
                     SocialAppButton(
                       backgroundColor: AppColors.fieldColor,
-                      child: Row(
+                    
+                      // onPressed: () {},
+                      text: '', onPressed: () {},
+                        child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Image.asset(
@@ -164,8 +167,6 @@ class _SignUpPageState extends State<SignUpPage> {
                               style: AppTextStyles.loginwithgoogle),
                         ],
                       ),
-                      // onPressed: () {},
-                      text: '', onPressed: () {},
                     ),
 
                     SizedBox(
@@ -182,7 +183,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             style: TextStyle(
                                 fontSize: AppSize.fontSizeSm() * 1.20,
                                 color: AppColors.greyColor),
-                            children: [
+                            children: const [
                               TextSpan(
                                 text: "By signing up you accept the",
                                 style: TextStyle(),
@@ -214,7 +215,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             InkWell(
                               onTap: () {
                                 Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => SignInPage()));
+                                    builder: (context) => const SignInPage()));
                               },
                               child: Text(
                                 AppText.signIn,

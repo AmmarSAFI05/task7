@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:task7_demo/core/constant/const_data.dart';
@@ -51,7 +52,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
-        builder: (context) => isLoggedIn ? HomePage() : SignInPage(),
+        builder: (context) => isLoggedIn ? const HomePage() :const SignInPage(),
       ),
     );
   }
@@ -91,7 +92,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                 onPressed: () {
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
-                      builder: (context) => SignInPage(),
+                      builder: (context) => const SignInPage(),
                     ),
                   );
                 },
