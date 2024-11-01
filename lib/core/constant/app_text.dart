@@ -24,8 +24,10 @@ class AppText {
       "In this course I'll show the step by step, day by day process to build better products, just as لأoogle, Slack, KLM and manu other do.";
   static String detailsUsername = "Laurel Seilha";
   static String detailsSubUsername = "Product Designer";
+  static String hour = "5h 21m";
   static String freeEBook = "Free e-book";
-  static String detailsComponent = "How to get feedback on their products in just 5 days";
+  static String detailsComponent =
+      "How to get feedback on their products in just 5 days";
   static String detailsButton = "Follow class";
   static String homeUser = "Hallo, Samuel!";
   static String homeUserPoints = "+1600 Points";
@@ -45,15 +47,17 @@ class AppText {
   static String myMessages = "My Messages";
   static String newMessages = "2 new messages";
   static String username1 = "Roger Hulg";
-  static String userMessage1 = "Hey, can i ask something? i need your help please";
+  static String userMessage1 =
+      "Hey, can i ask something? i need your help please";
   static String username2 = "Hilman Nuris";
   static String userMessage2 = "thanks for your information dude!";
   static String username3 = "Erick Lawrence";
-  static String userMessage3 = "Did you take the free illustration class yesterday?";
+  static String userMessage3 =
+      "Did you take the free illustration class yesterday?";
   static String username4 = "Jennifer Dunn";
-  static String userMessage4 = "Hey Samuel, where did you get your point? can we exchange?";
+  static String userMessage4 =
+      "Hey Samuel, where did you get your point? can we exchange?";
   static String username5 = "Andy Warhol";
   static String userMessage5 = "that’s true bro, hahaha";
   static String username6 = "Thomas Partrey";
-
 }
