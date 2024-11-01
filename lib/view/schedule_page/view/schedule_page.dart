@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_images.dart';
 import '../../../core/constant/app_sizes.dart';
@@ -8,7 +7,6 @@ import '../../../core/functions/login_validator.dart';
 import '../../../core/text_styles.dart';
 import '../../../widgets/schedule_time_container.dart';
 import '../../../widgets/social_app_text_form_field.dart';
-import '../../../widgets/soical_app_button.dart';
 
 class SchedulePage extends StatefulWidget {
   const SchedulePage({super.key});
@@ -95,7 +93,7 @@ class _SchedulePageState extends State<SchedulePage> {
                         crossAxisSpacing: 0.083*AppSize.screenWidth,
                         childAspectRatio: 2.3,
                       ),
-                      children: [
+                      children: const [
                         CustomContainer(
                           containerColor: AppColors.fieldColor,
                           borderColor: AppColors.lightGreyContainerSchedColor,
@@ -113,7 +111,7 @@ class _SchedulePageState extends State<SchedulePage> {
                           borderColor: AppColors.orangeColor,
                           textColor: AppColors.bgColor,
                           text: "09.45 AM",
-                          hasShadow: true, // تفعيل الظل
+                          hasShadow: true,
                           customShadow: BoxShadow(
                             color: Color(0x3FEC5F5F),
                             blurRadius: 12.63,
@@ -172,7 +170,7 @@ class _SchedulePageState extends State<SchedulePage> {
                                 bottom: 0.01*AppSize.screenHeight),
                             child: Text(
                               AppText.email,
-                              style: AppTextStyles.SchedulePageStyle,
+                              style: AppTextStyles.schedulePageStyle,
                             ),
                           ),
                           SocialAppTextFormField(
@@ -189,11 +187,11 @@ class _SchedulePageState extends State<SchedulePage> {
                                 bottom: 0.017*AppSize.screenHeight),
                             child: Text(
                               AppText.telNum,
-                              style: AppTextStyles.SchedulePageStyle,
+                              style: AppTextStyles.schedulePageStyle,
                             ),
                           ),
                           SocialAppTextFormField(
-                            validator: LoginValidator.validatePhonenum,
+                            validator: LoginValidator.validatePhoneNum,
                             controller: phoneController,
                             backgroundColor: AppColors.fieldColor,
                             textColor: AppColors.lightGreyContainerSchedColor,
@@ -219,15 +217,13 @@ class _SchedulePageState extends State<SchedulePage> {
                         Stack(
                                   children: [
 
-                                    Container(width: 0.69*AppSize.screenWidth,height: 0.029*AppSize.screenHeight,),
+                                    SizedBox(width: 0.69*AppSize.screenWidth,height: 0.029*AppSize.screenHeight,),
                                     Row(
                                       children: [
-                                        SizedBox(width: 30),
-                                        Container(
-                                          child: Text(
+                                        SizedBox(width: 0.088*AppSize.screenWidth),
+                                           Text(
                                             AppText.dateAndTime,
                                             style: AppTextStyles. onBoardingSubTitle,
-                                          ),
                                         ),
                                       ],
                                     ),
@@ -258,7 +254,7 @@ class _SchedulePageState extends State<SchedulePage> {
                     minimumSize: Size(0.916*AppSize.screenWidth,0.07*AppSize.screenHeight)),
 
                     child: Center(child: Text(AppText.scheduleButton,
-                      style: AppTextStyles.ScheduleButtonStyle,),),
+                      style: AppTextStyles.scheduleButtonStyle,),),
                     onPressed: () => Navigator.pop(context),
                   ),
                 ],
