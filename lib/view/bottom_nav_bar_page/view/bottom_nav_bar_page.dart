@@ -81,10 +81,10 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
                 height: AppSize.md(),
                 decoration: const BoxDecoration(
                     shape: BoxShape.circle, color: AppColors.orangeColor),
-                child: const Center(
+                child: Center(
                   child: Text(
                     "2",
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.white,fontSize: AppSize.fontSizeSm()*0.5),
                   ),
                 ),
               ))
